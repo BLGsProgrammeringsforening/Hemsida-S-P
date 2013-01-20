@@ -1,0 +1,189 @@
+/*****************************************************************************************
+Här inne samlas bara styles för element och klasser, alltså hur saker och ting ska se ut.
+Layouter för olika skärmtyper bestäms av small.css medium.css och layout.css
+
+Table of content
+
+$Pre-stuff
+    |_____import fonts
+    |_____Resetting margin/padding
+
+1. $DEFINE Bestämmer hur saker som h1 taggen ska se ut och allmän font
+
+2. $HEADER
+
+3. $NAVIGATION
+
+4. $SECTION
+
+5. $FOOTER
+
+******************************************************************************************/
+
+
+/*-------------------------------------------------------------------------------------
+
+                                    [$Pre-stuff]
+
+---------------------------------------------------------------------------------------*/
+@font-face {
+	font-family:kepler;
+	font-weight:bold-italic;
+	src:url(fonts/Kepler-bi.otf);
+}
+
+@font-face {
+	font-family:kepler;
+	font-weight:italic;
+	src:url(fonts/keplerli.otf);
+}
+@font-face {
+	font-family:Roboto;
+	font-weight:normal;
+	src:url(fonts/Roboto-Regular.ttf);
+}
+@font-face {
+	font-family:Roboto;
+	font-weight:italic;
+	src:url(fonts/Roboto-Italic.ttf);
+}
+@font-face {
+	font-family:Roboto;
+	font-weight:light;
+	src:url(fonts/Roboto-Light.ttf);
+}
+@font-face {
+	font-family:Roboto;
+	font-weight:bold;
+	src:url(fonts/Roboto-Bold.ttf);
+}
+* {
+	margin:0;
+	padding:0;
+}
+
+header,section,footer,nav, aside {
+	display:block;
+}
+
+/*Element styles*/
+@media screen and (min-width:901px){
+	body {
+	background-color:#e8e8e8;
+	background-image:url(../img/bghead.png),url(bg2.png);
+	background-repeat:repeat-x,repeat;
+	}
+}
+@media screen and (max-width:900px){
+	body {
+	background-color:#e8e8e8;
+	background-image:url(../img/bghead.png),url(bg2.png);
+	background-size: 98px 98px, 1px 50px;
+	background-repeat:repeat-x,repeat;
+	}
+}
+
+
+
+/*-------------------------------------------------------------------------------------
+
+                                   1. [$DEFINE]
+
+---------------------------------------------------------------------------------------*/
+body {
+	font-family: Roboto;
+	height: 100%;
+}
+#container { /*Detta behövs för att få footer längst ner på sidan. Se http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page */
+	min-height: 100%;
+	position: relative;
+}
+h1 {
+	color:#4b4b4b;
+}
+
+/*-------------------------------------------------------------------------------------
+
+                                   2. [$HEADER]
+
+---------------------------------------------------------------------------------------*/
+#top_header {
+	text-align:center;
+	color:#fff;
+	font-style:italic;
+	font-family: serif;
+	font-size: 14px;
+}
+#top_header p {
+}
+
+#main_nav li,#main_nav ul {
+	display:inline-block;
+	color:#444;
+	font-style:italic;
+}
+
+/*#main_nav li:hover {
+	background-color:rgba(0,0,0,0.1);
+}*/
+
+#main_nav {
+	list-style-type:none;
+	text-align:center;
+	font-family: serif;
+}
+
+#main_nav ul {
+	margin:0;
+	padding:0;
+	font-size:0;
+	background-color:rgba(0,0,0,0.2);
+}
+
+#main_nav li {
+	margin:0;
+	border-left:1px dashed #a1a1a1;
+}
+
+#main_nav li:first-child {
+	border:none;
+}
+
+.header-article {
+	font-family:kepler;
+	font-style:bold-italic;
+	color:#4b4b4b;
+	text-align:center;
+}
+
+section {
+	margin: auto;
+	padding-bottom: 60px;
+}
+.aside-article {
+	margin: 20px;
+	padding: 20px;
+}
+article > h1 {
+	margin-top: 15px;
+}
+.header-article {font-size: 30px;}
+.aside-article > img {
+	width: 100%;
+}
+.aside-article, #main_nav li:hover {
+	background: rgba(0,0,0,0.1);
+}
+.aside-article, #main_nav ul {
+	-moz-border-radius:5px;
+	border-radius:5px;
+	border-bottom:1px solid #7b7b7b;
+}
+footer {
+	background: rgba(0,0,0,0.1);
+	height: 60px;
+	width: 100%;
+	border-top: 2px solid #949494;
+	position: absolute;
+	bottom: 0;
+}

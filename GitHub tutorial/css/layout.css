@@ -1,0 +1,66 @@
+/*-----------------------------------------------------------------
+                       [FÖRKLARINGAR]
+Detta css används för alla skärmar som är större än 1001px. 
+Tanken är att låta det mesta vara anpassat efter en skärmbredd på 
+1000px. Värdena i detta css kommer bara vara bestämda värden, 
+alltså inga % tal. 
+
+
+Jag behöver struktur råd. Ändra det ni vill. 
+Med Vanligt Hyfs, John Daniel, skapare av dokumentet.  
+-----------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------
+                     [Table of contents]
+$CollectedCss                     
+$HEADER #top_header
+$NAVIGATIOM #main_nav
+$SECTION
+
+
+----------------------------------------------------------------*/
+/*------------------[CollectedCss]------------------*/
+#top_header, section {
+	margin: auto;
+}
+
+
+/*-----------------[$HEADER]----------------*/
+#top_header {
+	min-width: 901px;
+	max-width:1000px;
+	text-align:center;
+	margin-top: 100px;
+}
+#top_header p {margin-bottom:50px;}
+#top_header img {
+	min-width: 901px;
+	width: 100%;
+	max-width:1000px;
+}
+
+/*--------------[$NAVIGATION]------------------*/
+#main_nav {
+	margin-top:40px;
+	padding: 5px;
+}
+
+#main_nav li {
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 20px;
+}
+
+/*-------------------[$SECTION]------------------------*/
+section {
+	max-width: 1000px;
+}
+.header-article {
+	margin-top: 20px;	
+}
+.aside-article {
+	width: 500px;
+	float: left;
+}

@@ -1,0 +1,11 @@
+header img {
+	width: 100%;
+}
+.aside-article {
+	width: 70%;
+	float: left;
+}
+section {
+	width: 90%;
+	text-transform: full-width;
+}

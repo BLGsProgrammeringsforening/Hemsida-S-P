@@ -9,3 +9,14 @@ section {
 	width: 90%;
 	text-transform: full-width;
 }
+#main_nav {
+	margin-top:40px;
+	padding: 5px;
+}
+
+#main_nav li {
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 20px;
+}

@@ -18,13 +18,18 @@ $Pre-stuff
 
 5. $FOOTER
 
+6. $COLLECTED
+     |_______Border-radius + border-bottom för t.ex nav och .aside-article
+     |________Bakgrund 0.1 alpha rgba
+
 ******************************************************************************************/
 
 
 /*-------------------------------------------------------------------------------------
 
                                     [$Pre-stuff]
-
+                                    
+Innehåller: inport av fonter, nollning av margin/padding, block definering av HTML5 objekt.
 ---------------------------------------------------------------------------------------*/
 @font-face {
 	font-family:kepler;
@@ -90,11 +95,11 @@ header,section,footer,nav, aside {
                                    1. [$DEFINE]
 
 ---------------------------------------------------------------------------------------*/
-body {
+html, body {
 	font-family: Roboto;
 	height: 100%;
 }
-#container { /*Detta behövs för att få footer längst ner på sidan. Se http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page */
+#container { 
 	min-height: 100%;
 	position: relative;
 }
@@ -114,18 +119,18 @@ h1 {
 	font-family: serif;
 	font-size: 14px;
 }
-#top_header p {
-}
 
+
+/*-------------------------------------------------------------------------------------
+
+                                   3. [$NAVIGATION]
+
+--------------------------------------------------------------------------------------*/
 #main_nav li,#main_nav ul {
 	display:inline-block;
 	color:#444;
 	font-style:italic;
 }
-
-/*#main_nav li:hover {
-	background-color:rgba(0,0,0,0.1);
-}*/
 
 #main_nav {
 	list-style-type:none;
@@ -149,6 +154,18 @@ h1 {
 	border:none;
 }
 
+
+
+/*---------------------------------------------------------------------------------
+
+                                   [$SECTION]
+
+-----------------------------------------------------------------------------------*/
+section {
+	margin: auto;
+	padding-bottom: 100px;
+}
+
 .header-article {
 	font-family:kepler;
 	font-style:bold-italic;
@@ -156,10 +173,6 @@ h1 {
 	text-align:center;
 }
 
-section {
-	margin: auto;
-	padding-bottom: 60px;
-}
 .aside-article {
 	margin: 20px;
 	padding: 20px;
@@ -168,9 +181,27 @@ article > h1 {
 	margin-top: 15px;
 }
 .header-article {font-size: 30px;}
-.aside-article > img {
+.aside-article > img {width: 100%;}
+
+/*---------------------------------------------------------------------------------
+
+                                  5. [$FOOTER]
+
+-----------------------------------------------------------------------------------*/
+footer {
+	background: #f8f8f8;
+	height: 60px;
 	width: 100%;
+	border-top: 2px solid #949494;
+	position: absolute;
+	bottom: 0px;
 }
+
+/*---------------------------------------------------------------------------------
+
+                                 6. [$COLLECTED]
+
+-----------------------------------------------------------------------------------*/
 .aside-article, #main_nav li:hover {
 	background: rgba(0,0,0,0.1);
 }
@@ -178,12 +209,4 @@ article > h1 {
 	-moz-border-radius:5px;
 	border-radius:5px;
 	border-bottom:1px solid #7b7b7b;
-}
-footer {
-	background: rgba(0,0,0,0.1);
-	height: 60px;
-	width: 100%;
-	border-top: 2px solid #949494;
-	position: absolute;
-	bottom: 0;
 }

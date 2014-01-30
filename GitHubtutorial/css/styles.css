@@ -29,7 +29,7 @@ $Pre-stuff
 
                                     [$Pre-stuff]
                                     
-Innehåller: inport av fonter, nollning av margin/padding, block definering av HTML5 objekt.
+Innehåller: inport av fonter, nollning av margin/padding, block-definering av HTML5 objekt.
 ---------------------------------------------------------------------------------------*/
 @font-face {
 	font-family:kepler;

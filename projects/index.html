@@ -1,0 +1,132 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+function readTextFile(file, fn){
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function (){
+        if(rawFile.readyState === 4){
+            if(rawFile.status === 200 || rawFile.status == 0){
+                fn(rawFile.responseText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+function gotoHTTP(link){
+	document.location = link;
+}
+
+
+function init(){
+	readTextFile('info.json',
+				function(txt){
+						window.akaProxy=JSON.parse(txt);
+						readTextFile('https://api.github.com/orgs/akaProxy',
+									function(txt){
+										window.akaProxy.GitHub=JSON.parse(txt);
+										readTextFile(window.akaProxy.GitHub.members_url.replace("{/member}", ""), function(txt){window.akaProxy.GitHub.members=JSON.parse(txt)});
+										readTextFile(window.akaProxy.GitHub.repos_url, function(txt){window.akaProxy.GitHub.repos=JSON.parse(txt);buildPage()});
+										console.log(akaProxy)
+									}
+						);
+				}
+	);
+}
+function createRepoElement(repoObj){
+	var name = repoObj['name'],
+		description = repoObj['description'],
+		div = document.createElement('div'),
+		innerDiv = document.createElement('div');
+	
+	var h1 = document.createElement('h1'),
+		paragraph = document.createElement('p');
+	
+	paragraph.innerText = repoObj['description'],
+		h1.innerText = repoObj['name'];
+	
+	div.className = 'repo',
+	innerDiv.appendChild(h1),
+	innerDiv.appendChild(paragraph);
+	div.appendChild(innerDiv),
+	div.onclick = function(){gotoHTTP(repoObj.clone_url)};
+	var td = document.createElement('td');
+	
+	td.appendChild(div)
+	return td
+}
+function buildPage(){
+	var table = document.createElement('tbody'),
+		tr = document.createElement('tr');
+	
+	
+	for(var i=0;i<akaProxy.GitHub.repos.length;i++){
+		if(parseInt(i/3)==i/3 && i!=0)
+			table.appendChild(tr),tr = document.createElement('tr');
+		tr.appendChild(createRepoElement(akaProxy.GitHub.repos[i]));
+	}
+	table.appendChild(tr);
+	var tble = document.createElement('table');
+	tble.appendChild(table);
+	document.getElementById('content').appendChild(tble);
+}
+/*
+for(var i=0;i<akaProxy.GitHub.repos.length;i++){
+   for(var hi in akaProxy.GitHub.repos[i]){
+      if(hi=='name')console.log(akaProxy.GitHub.repos[i][hi]);
+   }
+}
+*/
+</script>
+<style>
+table {
+	position: absolute;
+	width: 90%;
+	height: 100%;
+	margin-left: 5%;
+	margin-right: 5%;
+	top: 0px;
+	left: 0px;
+}
+div.repo {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: red;
+	position: relative;
+	width: 300px;
+	height: 200px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	left: 50%;
+	margin-left: -150px;
+	text-align: center;
+	vertical-align: middle;
+	/* line-height: 200px; */
+}
+div.repo div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	/*background-color:blue;*/
+	cursor: pointer;
+	/*WHY DOESN'T THIS WORK?!?!?!*/
+}
+element.style {
+	background-color: blue;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin-top: -25%;
+	height: 80%;
+}
+</style>
+</head>
+<body onload="init()">
+	<div id="content"></div>
+</body>
+</html>

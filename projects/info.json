@@ -1,0 +1,37 @@
+{
+"projects":	[
+			{"projectName":"NOVAXML.JS", "type":"link", "src":"Github"},
+			{"projectName":"Mathetokrati", "type":"projectGroup"},
+			{"projectName":"MathetocratiWebApi", "type":"subProject", "authors":[]}
+			],
+"members":	[	{
+				"name":"template",
+				"nickname":[],
+				"projects":	{
+							"akaProxy":	[	"projectName"
+										],
+							"other":	[	{"name":"use project template object"}
+										]
+							}
+				},
+				{
+				"name":"John Daniel",
+				"nickname":["JB","John John"],
+				"projects":	{
+							"akaProxy":	["NOVAXML.JS"
+										],
+							"other":	[	{"name":"glosar", "link":["https://play.google.com/store/apps/details?id=com.johndaniel.glosar"], "imgSrc":"https://lh6.ggpht.com/lOM1eT22rT_bCnsE56nGMyu2ETdcQ9yqu32DvQtYF-zTkuacoxA1akzafifKvUnswhFH=w300-rw"},
+											{"name":"The Chain", "link":["http://makingthechain.wordpress.com/"], "imgScr":""}
+										]
+							}
+				},
+				{
+				"name":"Erik",
+				"nickname":["Kiren"],
+				"projects":{"akaProxy":["NOVAXML.JS"],"other":[{"name":"project-h2o", "authors":["Erik","Simon"]}]}
+				}
+			],
+"links":	{
+			"GitHub_api":"https://api.github.com/orgs/akaProxy"
+			}
+}

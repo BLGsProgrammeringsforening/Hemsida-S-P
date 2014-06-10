@@ -1,0 +1,21 @@
+@import url("style.css");
+header{
+    position:fixed;
+    width:100%;
+    height:5%; /*Adjust this with js later*/
+    background-color: yellow;
+    left:0px;
+    top:0px;
+}
+#container{
+    position: fixed;
+    width: 100%;
+    height: 95%;
+    overflow-y: scroll;
+    background-color: green; /*This is supposed to be controlled by js*/
+  /*Color transition, different browsers*/
+    
+  /*End transition*/
+    left: 0px;
+    top:5%;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>akaPROXY</title>
+    <link rel="stylesheet" href="layout.css" type="text/css">
+</head>
+<body>
+    <header onclick="document.querySelector('.page-active').className=document.querySelector('.page-active').className.replace('page-active','page-prev outUpp');
+document.getElementById('container').scrollTop = SCRLL_LENGTH * parseInt(document.querySelector('.page-next').classList.item(0));
+document.querySelector('.page-next').className=document.querySelector('.page-next').className.replace('page-next','page-active inUpp');"></header>
+        <div id="container">
+            <div id="filler"></div>
+            <div class="page page-color-#0000FF page-prev"></div>
+            <div class="page page-color-FF0000 page-active"></div>
+            <div class="page page-color-00FF00 page-next"></div>
+        </div>
+    <footer></footer>
+    
+    <script src="scroll.js"></script>
+</body>
+</html>
